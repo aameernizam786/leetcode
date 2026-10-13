@@ -10,13 +10,13 @@
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        // if(list1 == null && list2 == null){
-        //     return null;
-        // }else if(list1 == null){
-        //     return list2;
-        // }else if(list2==null){
-        //     return list1;
-        // }
+        if(list1 == null && list2 == null){
+            return null;
+        }else if(list1 == null){
+            return list2;
+        }else if(list2==null){
+            return list1;
+        }
         ListNode root=new ListNode(-1);
         ListNode newRoot=root;
         ListNode temp1=list1;
