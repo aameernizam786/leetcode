@@ -23,7 +23,7 @@ class Solution {
         }
     }
     public int maxPathSum(TreeNode root) {
-       return maxSum(root).max;
+        return maxSum(root).max;
     }
     public Info maxSum(TreeNode root){
         if(root==null){
