@@ -3,11 +3,13 @@ class MyCircularQueue {
        int size;
        int front;
        int rear;
+       int capacity;
     public MyCircularQueue(int k) {
         arr=new int[k];
-        size=k;
+        size=0;
         front=-1;
         rear=-1;
+        capacity=k;
 
     }
     
@@ -18,8 +20,9 @@ class MyCircularQueue {
         if(front==-1){
             front=0;
         }
-        rear=(rear+1)%size;
+        rear=(rear+1)%capacity;
         arr[rear]=value;
+        size++;
         return true;
     }
     
@@ -30,8 +33,9 @@ class MyCircularQueue {
         if(rear==front){
             rear=front=-1;
         }else{
-            front=(front+1)%size;
+            front=(front+1)%capacity;
         }
+        size--;
         return true;
     }
     
@@ -50,11 +54,11 @@ class MyCircularQueue {
     }
     
     public boolean isEmpty() {
-        return rear==-1 && front==-1;
+        return size==0;
     }
     
     public boolean isFull() {
-        return (rear+1)%size==front;
+        return size==capacity;
     }
 }
 
